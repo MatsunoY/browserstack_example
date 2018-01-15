@@ -5,13 +5,13 @@ key: ""
 common_caps:
   "build": "rspec-browserstack"
   "browserstack.debug": true
+  "browserstack.local": true
+  "browserstack.localIdentifier": 'randomstring'
+
 
 browser_caps:
   -
     "browser": "chrome"
   -
     "browser": "firefox"
-  -
-    "browser": "internet explorer"
-  -
-    "browser": "safari"
+

@@ -20,7 +20,10 @@ RSpec.configure do |config|
     # Code to start browserstack local before start of test
     if enable_local
       @bs_local = BrowserStack::Local.new
-      bs_local_args = { "key" => CONFIG['key'], "forcelocal" => true }
+      bs_local_args = { "key" => CONFIG['key'], "forcelocal" => true, "force": true}
+      if @caps["browserstack.localIdentifier"]
+        bs_local_args.merge!("localIdentifier" => "randomstring")
+      end
       @bs_local.start(bs_local_args)
       @caps["browserstack.local"] = true
     end
